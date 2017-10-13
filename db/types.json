@@ -1,0 +1,40 @@
+{
+    "types": [
+        {
+            "id": 3,
+            "category": 1,
+            "name": "fireworks",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+        }
+        {
+            "id": 4,
+            "category": 1,
+            "name": "fireworks",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+       	}
+       	{
+            "id": 5,
+            "category": 1,
+            "name": "fireworks",
+            "description": "Fireworks intended for recreational use during holiday celebrations"
+	    }
+	     {
+            "id": 6,
+            "category": 2,
+            "name": "explosive",
+            "description": "Explosives are intended for professional operators only"
+        }
+        {
+            "id": 7,
+            "category": 2,
+            "name": "explosive",
+            "description": "Explosives are intended for professional operators only"
+       	}
+       	{
+            "id": 8,
+            "category": 2,
+            "name": "explosive",
+            "description": "Explosives are intended for professional operators only"
+	    }
+    ]
+}
