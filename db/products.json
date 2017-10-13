@@ -1,0 +1,121 @@
+{
+	"products": [
+			{
+				"Amatex": {
+					"id": 9,
+					"type": 2,
+					"name": "Amatex",
+					"description": "Military explosive."
+				}
+			}, 
+			{
+				"PETN": {
+					"id": 10,
+					"type": 2,
+					"name": "PETN",
+					"description": "Military explosive."
+					}
+			}, 
+			{
+				"RDX": {
+					"id": 11,
+					"type": 2,
+					"name": "RDX",
+					"description": "Military explosive."
+					}
+			}
+			{
+				"Brisance": {
+					"id": 12,
+					"type": 2,
+					"name": "Brisance",
+					"description": "High explosive."
+				}
+			}, 
+			{
+				"C-4": {
+					"id": 13,
+					"type": 2,
+					"name": "C-4",
+					"description": "Military explosive."
+					}
+			}, 
+			{
+				"Explosophore": {
+					"id": 14,
+					"type": 2,
+					"name": "Explosophore",
+					"description": "Organic explosive."
+					}
+			}{
+				"Gunpowder": {
+					"id": 15,
+					"type": 1,
+					"name": "Gunpowder",
+					"description": "Multiple use."
+				}
+			}, 
+			{
+				"Tannerite": {
+					"id": 16,
+					"type": 2,
+					"name": "Tannerite",
+					"description": "Military explosive."
+					}
+			}, 
+			{
+				"M-80": {
+					"id": 17,
+					"type": 1,
+					"name": "M-80",
+					"description": "Fireworks."
+					}
+			}{
+				"Black Cats": {
+					"id": 18,
+					"type": 1,
+					"name": "Black Cats",
+					"description": "Bottle rockets/fireworks."
+				}
+			}, 
+			{
+				"Smoke bomb": {
+					"id": 19,
+					"type": 1,
+					"name": "Smoke Bomb",
+					"description": "Smoking fireworks."
+					}
+			}, 
+			{
+				"Snakes": {
+					"id": 20,
+					"type": 1,
+					"name": "Snakes",
+					"description": "Very weak fireworks."
+					}
+			}{
+				"Ground Spinners": {
+					"id": 21,
+					"type": 1,
+					"name": "Ground Spinners",
+					"description": "Spinning fireworks."
+				}
+			}, 
+			{
+				"Fountains": {
+					"id": 22,
+					"type": 1,
+					"name": "Fountains",
+					"description": "Multi-colored sparkls showering like a fountain."
+					}
+			}, 
+			{
+				"Sparklers": {
+					"id": 23,
+					"type": 2,
+					"name": "Sparklers",
+					"description": "Multi-colored sparklers that are safe for any age."
+					}
+			}
+				]
+}
