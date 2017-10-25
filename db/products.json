@@ -112,10 +112,42 @@
 			{
 				"Sparklers": {
 					"id": 23,
-					"type": 2,
+					"type": 1,
 					"name": "Sparklers",
 					"description": "Multi-colored sparklers that are safe for any age."
 					}
-			}
+			},
+			{
+				"Tanks": {
+					"id": 24,
+					"type": 1,
+					"name": "Tanks",
+					"description": "Fun for the littles."
+					}
+			}, 
+			{
+				"Fountains": {
+					"id": 22,
+					"type": 1,
+					"name": "Fountains",
+					"description": "Multi-colored sparkls showering like a fountain."
+					}
+			}, 
+			{
+				"Fountains": {
+					"id": 22,
+					"type": 1,
+					"name": "Fountains",
+					"description": "Multi-colored sparkls showering like a fountain."
+					}
+			}, 
+			{
+				"Fountains": {
+					"id": 22,
+					"type": 1,
+					"name": "Fountains",
+					"description": "Multi-colored sparkls showering like a fountain."
+					}
+			}, 
 				]
 }
