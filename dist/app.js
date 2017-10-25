@@ -3,12 +3,14 @@
 
 const dom = require('./dom');
 
-const explosives = [];
+let categories = [];
+let types = [];
+let products = [];
 
 const categoriesJSON = () => {
 	return new Promise((resolve, reject) => {
 		$.ajax('./db/categories.json').done((data1) => {
-			resolve(data1.categories1);
+			resolve(data1.categories);
 		}).fail((error1) => {
 			reject(error1);
 		});
@@ -36,53 +38,62 @@ const productsJSON = () => {
 };
 
 const explosiveGetter = () => {
-	Promise.all([categoriesJSON(), typesJSON(), productsJSON()]).then((results) => {
-		console.log("results from promise.all", results);
-		results.forEach((result) => {
-			result.forEach((explosive) => {
-				console.log("explosive", explosive);
-				explosives.push(explosive);
-			});
+	categoriesJSON().then((results) => {
+		results.forEach((explosive) => {
+			categories.push(explosive);
 		});
-		makeExplosives();
+		return typesJSON();
+	}).then((results2) => {
+		results2.forEach((explosive) => {
+			types.push(explosive);
+		});
+		return productsJSON();
+	}).then((results3) => {
+		results3.forEach((explosive) => {
+			products.push(explosive);
+		});
+		console.log('arrays of products', products);
 	}).catch((error) => {
-		console.log("error from promise.all", error);
+		console.log('error', error);
 	});
 };
 
-const makeExplosives = () => {
-	explosives.forEach((explosive) => {
-		dom(explosive);
-	});
-};
+// const makeExplosives = () => {
+// 	explosives.forEach((explosive) => {
+// 		dom(explosive);
+// 	});
+// };
 
 const initializer = () => {
 	explosiveGetter();	
 };
 
-const getExplosives = () => {
-	return explosives;
-};
+// const getExplosives = () => {
+// 	return explosives;
+// };
 
-module.exports = {initializer:initializer, getExplosives:getExplosives};
+module.exports = {initializer: initializer, explosiveGetter: explosiveGetter};
 },{"./dom":2}],2:[function(require,module,exports){
 "use strict"; 
 
 const outputDiv = $('#explosives');
 
-const domString = (explosive) => {
-	let domStrang = '';
-	 	domStrang += `<div>`;
-	 	domStrang += `<h1>${explosive.type}</h1>`;
-	 	domStrang += `</div>`;
-	 printToDom(domStrang);
+const boomString = (explosive) => {
+	let newBoom = '';
+	 	newBoom += `<div>`;
+	 	newBoom += `<h1>${explosive.name}</h1>`;
+	 	newBoom += `<img src= "${explosive.url}">`;
+	 	newBoom += `</div>`;
+	 printToDom(newBoom);
 };
 
 const printToDom = (strang) => {
 	outputDiv.append(strang);
 };
 
-module.exports = domString;
+module.exports = boomString;
+
+
 
 },{}],3:[function(require,module,exports){
 "use strict";
@@ -93,4 +104,5 @@ const data = require('./data');
 $(document).ready(() => {
 	data.initializer();
 });
+
 },{"./data":1}]},{},[3]);

@@ -2,12 +2,14 @@
 
 const dom = require('./dom');
 
-const explosives = [];
+let categories = [];
+let types = [];
+let products = [];
 
 const categoriesJSON = () => {
 	return new Promise((resolve, reject) => {
 		$.ajax('./db/categories.json').done((data1) => {
-			resolve(data1.categories1);
+			resolve(data1.categories);
 		}).fail((error1) => {
 			reject(error1);
 		});
@@ -35,32 +37,38 @@ const productsJSON = () => {
 };
 
 const explosiveGetter = () => {
-	Promise.all([categoriesJSON(), typesJSON(), productsJSON()]).then((results) => {
-		console.log("results from promise.all", results);
-		results.forEach((result) => {
-			result.forEach((explosive) => {
-				console.log("explosive", explosive);
-				explosives.push(explosive);
-			});
+	categoriesJSON().then((results) => {
+		results.forEach((explosive) => {
+			categories.push(explosive);
 		});
-		makeExplosives();
+		return typesJSON();
+	}).then((results2) => {
+		results2.forEach((explosive) => {
+			types.push(explosive);
+		});
+		return productsJSON();
+	}).then((results3) => {
+		results3.forEach((explosive) => {
+			products.push(explosive);
+		});
+		console.log('arrays of products', products);
 	}).catch((error) => {
-		console.log("error from promise.all", error);
+		console.log('error', error);
 	});
 };
 
-const makeExplosives = () => {
-	explosives.forEach((explosive) => {
-		dom(explosive);
-	});
-};
+// const makeExplosives = () => {
+// 	explosives.forEach((explosive) => {
+// 		dom(explosive);
+// 	});
+// };
 
 const initializer = () => {
 	explosiveGetter();	
 };
 
-const getExplosives = () => {
-	return explosives;
-};
+// const getExplosives = () => {
+// 	return explosives;
+// };
 
-module.exports = {initializer:initializer, getExplosives:getExplosives};
+module.exports = {initializer: initializer, explosiveGetter: explosiveGetter};

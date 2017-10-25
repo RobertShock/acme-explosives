@@ -2,16 +2,19 @@
 
 const outputDiv = $('#explosives');
 
-const domString = (explosive) => {
-	let domStrang = '';
-	 	domStrang += `<div>`;
-	 	domStrang += `<h1>${explosive.type}</h1>`;
-	 	domStrang += `</div>`;
-	 printToDom(domStrang);
+const boomString = (explosive) => {
+	let newBoom = '';
+	 	newBoom += `<div>`;
+	 	newBoom += `<h1>${explosive.name}</h1>`;
+	 	newBoom += `<img src= "${explosive.url}">`;
+	 	newBoom += `</div>`;
+	 printToDom(newBoom);
 };
 
 const printToDom = (strang) => {
 	outputDiv.append(strang);
 };
 
-module.exports = domString;
+module.exports = boomString;
+
+
